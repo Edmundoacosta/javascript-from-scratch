@@ -1,22 +1,4 @@
-// ESLint
-// idiomatic javascript
-// frontend labs
-var isBoolean = true;
-var isString = "Cadena de Texto";
-var isNumber = 3322;
-
-
-var isObject = {  // Objeto Literal
-	name: "Edmundo",
-	lastname: "Acosta",
-};
-
-
-var isArray = ['Edmundo', 'Bruno', 'Eli', 'Paolo'];
-
-var isFunction = function() {
-	return "Hola soy una funcion"
-}
+var notas = [ 20, 10, 20, 17, 02, 01, 20 ];
 
 function student(estudiante) {
 	function calcFinalNote(){
@@ -31,11 +13,67 @@ student({nombre: "Edmundo", apellido: "Acosta", noteone: 20, notetwo: 15});
 
 
 
+function sumatoria(n) {
+	if (n == 1) {
+		return 1;
+	}
+
+	return sumatoria(n-1) + n;
+}
+
+function sumaArray(array) {
+	var length = array.length;
+	var lastElement = array.pop();
+
+	if ( length == 1 ) {
+		return lastElement;
+	}
+
+	return sumaArray(array) + lastElement;
+}
+
+console.log(sumaArray(notas));
+
+console.log(sumatoria(5));
 
 
 
-console.log(isBoolean, typeof isBoolean);
-console.log(isString, typeof isString);
-console.log(isNumber, typeof isNumber);
-console.log(isBoolean, typeof isBoolean);
-console.log(isFunction, typeof isFunction);
+//SCOPE
+
+
+function approveStudent(student) {
+	var minimunNote = 13;
+
+	if (student.note > minimunNote) {
+		console.log("Felicidades, estás aprobado");
+	}
+}
+
+
+approveStudent({ name: "Eli", lastName: "Manrique", note: 12 });
+
+try {
+	console.log(minimunNote);
+} catch (e) {
+	console.log("Hubo un error", e);
+}
+
+
+// Jquery
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
