@@ -18,6 +18,21 @@ var isFunction = function() {
 	return "Hola soy una funcion"
 }
 
+function student(estudiante) {
+	function calcFinalNote(){
+		console.log((estudiante.noteone + estudiante.notetwo ) / 2);
+	}
+
+	return calcFinalNote();
+}
+
+
+student({nombre: "Edmundo", apellido: "Acosta", noteone: 20, notetwo: 15});
+
+
+
+
+
 
 console.log(isBoolean, typeof isBoolean);
 console.log(isString, typeof isString);
